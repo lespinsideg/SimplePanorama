@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <attr name="texture" format="integer"/>
+    <declare-styleable name="SphericalView">
+        <attr name="texture" />
+    </declare-styleable>
+</resources>
