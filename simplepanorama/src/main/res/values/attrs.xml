@@ -1,7 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <attr name="texture" format="integer"/>
+    <attr name="enableZoom" format="boolean"/>
+    <attr name="enableAccelerometer" format="boolean"/>
+    <attr name="enableInertia" format="boolean"/>
     <declare-styleable name="SphericalView">
-        <attr name="texture" />
+        <attr name="enableZoom" />
+        <attr name="enableAccelerometer" />
+        <attr name="enableInertia" />
     </declare-styleable>
 </resources>
