@@ -1,1 +1,1 @@
-include ':sample', ':simplepanorama', ':panoramagl-android'
+include ':sample', ':simplepanorama'

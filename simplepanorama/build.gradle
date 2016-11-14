@@ -25,10 +25,16 @@ android {
 }
 
 
+repositories {
+    flatDir {
+        dirs 'libs'
+    }
+}
+
 dependencies {
     compile fileTree(include: ['*.jar'], dir: 'libs')
-    compile project(':panoramagl-android')
     compile 'com.android.support:appcompat-v7:23.3.0'
+    compile 'com.github.lespinsideg:panoramagl:0.1.0'
 
     androidTestCompile('com.android.support.test.espresso:espresso-core:2.2.2', {
         exclude group: 'com.android.support', module: 'support-annotations'
