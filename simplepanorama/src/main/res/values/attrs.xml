@@ -3,9 +3,15 @@
     <attr name="enableZoom" format="boolean"/>
     <attr name="enableAccelerometer" format="boolean"/>
     <attr name="enableInertia" format="boolean"/>
+    <attr name="yaw" format="float"/>
+    <attr name="pitch" format="float"/>
+    <attr name="zoomFactor" format="float"/>
     <declare-styleable name="SphericalView">
         <attr name="enableZoom" />
         <attr name="enableAccelerometer" />
         <attr name="enableInertia" />
+        <attr name="yaw" />
+        <attr name="pitch" />
+        <attr name="zoomFactor" />
     </declare-styleable>
 </resources>

@@ -15,6 +15,9 @@ import com.panoramagl.PLSphericalPanorama;
 
 public class SphericalView extends RelativeLayout {
     private PLManager plManager;
+    private float defaultPitch;
+    private float defaultYaw;
+    private float defaultZoomFactor;
 
     public SphericalView(Context context) {
         this(context, null);
@@ -34,6 +37,9 @@ public class SphericalView extends RelativeLayout {
         boolean enableAccelerometer = typedArray.getBoolean(R.styleable.SphericalView_enableAccelerometer, false);
         boolean enableInertia = typedArray.getBoolean(R.styleable.SphericalView_enableInertia, false);
         boolean enableZoom = typedArray.getBoolean(R.styleable.SphericalView_enableZoom, true);
+        defaultPitch = typedArray.getFloat(R.styleable.SphericalView_pitch, 4f);
+        defaultYaw = typedArray.getFloat(R.styleable.SphericalView_yaw, 0f);
+        defaultZoomFactor = typedArray.getFloat(R.styleable.SphericalView_zoomFactor, 0.7f);
 
         typedArray.recycle();
 
@@ -62,14 +68,16 @@ public class SphericalView extends RelativeLayout {
     public void setPanorama(Bitmap bitmap, boolean keepCameraAngle) {
         PLSphericalPanorama panorama = new PLSphericalPanorama();
         panorama.setImage(new PLImage(bitmap, true));
-        float pitch = 5f;
-        float yaw = 0f;
-        float zoomFactor = 0.8f;
-        if(keepCameraAngle) {
-            pitch = panorama.getPitch();
-            yaw = panorama.getYaw();
-            zoomFactor = panorama.getCamera().getZoomFactor();
+        float pitch = defaultPitch;
+        float yaw = defaultYaw;
+        float zoomFactor = defaultZoomFactor;
+
+        if(keepCameraAngle && plManager.getPanorama() != null) {
+            pitch = plManager.getCamera().getPitch();
+            yaw = plManager.getCamera().getYaw();
+            zoomFactor = plManager.getCamera().getZoomFactor();
         }
+
         panorama.getCamera().lookAtAndZoomFactor(pitch, yaw, zoomFactor, false);
         plManager.setPanorama(panorama);
     }
@@ -100,5 +108,29 @@ public class SphericalView extends RelativeLayout {
 
     public PLICamera getCamera() {
         return plManager.getCamera();
+    }
+
+    public float getDefaultPitch() {
+        return defaultPitch;
+    }
+
+    public void setDefaultPitch(float defaultPitch) {
+        this.defaultPitch = defaultPitch;
+    }
+
+    public float getDefaultYaw() {
+        return defaultYaw;
+    }
+
+    public void setDefaultYaw(float defaultYaw) {
+        this.defaultYaw = defaultYaw;
+    }
+
+    public float getDefaultZoomFactor() {
+        return defaultZoomFactor;
+    }
+
+    public void setDefaultZoomFactor(float defaultZoomFactor) {
+        this.defaultZoomFactor = defaultZoomFactor;
     }
 }
