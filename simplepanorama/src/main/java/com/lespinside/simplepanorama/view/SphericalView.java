@@ -19,6 +19,7 @@ public class SphericalView extends RelativeLayout {
     private float defaultYaw;
     private float defaultZoomFactor;
     private float defaultRotationSensibility;
+    private boolean init;
 
     public SphericalView(Context context) {
         this(context, null);
@@ -74,7 +75,7 @@ public class SphericalView extends RelativeLayout {
         float yaw = defaultYaw;
         float zoomFactor = defaultZoomFactor;
 
-        if(keepCameraAngle && plManager.getPanorama() != null) {
+        if(keepCameraAngle && init) {
             pitch = plManager.getCamera().getPitch();
             yaw = plManager.getCamera().getYaw();
             zoomFactor = plManager.getCamera().getZoomFactor();
@@ -83,6 +84,7 @@ public class SphericalView extends RelativeLayout {
         panorama.getCamera().lookAtAndZoomFactor(pitch, yaw, zoomFactor, false);
         panorama.getCamera().setRotationSensitivity(defaultRotationSensibility);
         plManager.setPanorama(panorama);
+        init = true;
     }
 
     public void setAccelerometerEnabled(boolean enabled) {
