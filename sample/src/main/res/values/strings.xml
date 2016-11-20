@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">SimplePanorama</string>
+    <string name="button_1">1</string>
+    <string name="button_2">2</string>
 </resources>
