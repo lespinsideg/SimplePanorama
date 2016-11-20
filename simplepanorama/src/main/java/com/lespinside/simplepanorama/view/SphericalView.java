@@ -41,7 +41,7 @@ public class SphericalView extends RelativeLayout {
         defaultPitch = typedArray.getFloat(R.styleable.SphericalView_pitch, 4f);
         defaultYaw = typedArray.getFloat(R.styleable.SphericalView_yaw, 0f);
         defaultZoomFactor = typedArray.getFloat(R.styleable.SphericalView_zoomFactor, 0.7f);
-        defaultZoomFactor = typedArray.getFloat(R.styleable.SphericalView_rotationSensibility, 0.3f);
+        defaultRotationSensibility = typedArray.getFloat(R.styleable.SphericalView_rotationSensibility, 30f);
 
         typedArray.recycle();
 
