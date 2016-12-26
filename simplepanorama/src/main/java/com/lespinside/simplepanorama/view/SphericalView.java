@@ -39,6 +39,7 @@ public class SphericalView extends RelativeLayout {
         boolean enableAccelerometer = typedArray.getBoolean(R.styleable.SphericalView_enableAccelerometer, false);
         boolean enableInertia = typedArray.getBoolean(R.styleable.SphericalView_enableInertia, false);
         boolean enableZoom = typedArray.getBoolean(R.styleable.SphericalView_enableZoom, true);
+        boolean enableReset = typedArray.getBoolean(R.styleable.SphericalView_enableReset, true);
         defaultPitch = typedArray.getFloat(R.styleable.SphericalView_pitch, 4f);
         defaultYaw = typedArray.getFloat(R.styleable.SphericalView_yaw, 0f);
         defaultZoomFactor = typedArray.getFloat(R.styleable.SphericalView_zoomFactor, 0.7f);
@@ -49,6 +50,7 @@ public class SphericalView extends RelativeLayout {
         setAccelerometerEnabled(enableAccelerometer);
         setInertiaEnabled(enableInertia);
         setZoomEnabled(enableZoom);
+        setResetEnabled(enableReset);
     }
 
     public void onResume() {
@@ -105,6 +107,10 @@ public class SphericalView extends RelativeLayout {
 
     public void setZoomEnabled(boolean enabled) {
         plManager.setZoomEnabled(enabled);
+    }
+
+    public void setResetEnabled(boolean enabled) {
+        plManager.setResetEnabled(enabled);
     }
 
     public boolean isZoomEnabled() {
