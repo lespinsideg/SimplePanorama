@@ -35,7 +35,7 @@ dependencies {
     compile fileTree(include: ['*.jar'], dir: 'libs')
     compile 'com.github.lespinsideg:panoramagl:0.1.1'
 
-    testCompile "org.robolectric:robolectric:3.1.4"
-    testCompile "org.assertj:assertj-core:3.6.1"
+    testCompile 'org.robolectric:robolectric:3.1.4'
+    testCompile 'com.squareup.assertj:assertj-android:1.1.1'
     testCompile 'junit:junit:4.12'
 }
