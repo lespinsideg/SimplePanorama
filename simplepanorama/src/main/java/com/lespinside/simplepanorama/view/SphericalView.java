@@ -109,10 +109,6 @@ public class SphericalView extends RelativeLayout {
         plManager.setZoomEnabled(enabled);
     }
 
-    public void setResetEnabled(boolean enabled) {
-        plManager.setResetEnabled(enabled);
-    }
-
     public boolean isZoomEnabled() {
         return plManager.isZoomEnabled();
     }
@@ -151,5 +147,13 @@ public class SphericalView extends RelativeLayout {
 
     public void setDefaultRotationSensibility(float defaultRotationSensibility) {
         this.defaultRotationSensibility = defaultRotationSensibility;
+    }
+
+    public void setResetEnabled(boolean enabled) {
+        plManager.setResetEnabled(enabled);
+    }
+
+    public boolean isResetEnabled() {
+        return plManager.isResetEnabled();
     }
 }
