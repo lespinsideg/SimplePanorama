@@ -42,7 +42,7 @@ You can add `SphericalView` in your layout xml
 </LinearLayout>
 ```
 
-### call lifecycle methods in activity
+### Call lifecycle methods in activity
 
 And you should call `onResume`, `onPause`, `onDestroy` method in each lifecycle method.
 
@@ -81,8 +81,8 @@ public class MainActivity extends AppCompatActivity {
 ```
 
 ### Attributes list
-* enableZoom - enable zooming in/out by two fingers touch.
-* enableReset - enable resetting zoom factor by three fingers touch.
+* enableZoom - enable zooming in/out with two fingers touch.
+* enableReset - enable resetting zoom factor with three fingers touch.
 * enableAccelerometer - enable accelerometer sensor to move panorama camera.
 * enableInertia - enable inertia of panorama camera movement.
 * yaw - set default yaw of panorama camera.
@@ -90,7 +90,7 @@ public class MainActivity extends AppCompatActivity {
 * zoomFactor - set default zoom factor of panorama camera.
 * rotationSensibility - set default rotation sensibility of panorama camera.
 
-### sample activity
+### Sample activity
 You can find a sample activity [here](https://github.com/lespinsideg/SimplePanorama/blob/master/sample/src/main/java/com/lespinside/simplepanorama/sample/MainActivity.java)
 
 Supports
