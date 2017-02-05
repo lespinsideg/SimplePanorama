@@ -92,4 +92,17 @@ public class SphericalViewTest {
 
         assertThat(subject.isAccelerometerEnabled()).isFalse();
     }
+
+    @Test
+    public void givenEnableResetAttribute_whenCreated_thenEnablesReset() throws Exception {
+        AttributeSet attributeSet = Robolectric.buildAttributeSet().addAttribute(R.attr.enableReset, "true").build();
+        SphericalView subject = new SphericalView(RuntimeEnvironment.application, attributeSet);
+
+        assertThat(subject.isResetEnabled()).isTrue();
+
+        attributeSet = Robolectric.buildAttributeSet().addAttribute(R.attr.enableReset, "false").build();
+        subject = new SphericalView(RuntimeEnvironment.application, attributeSet);
+
+        assertThat(subject.isResetEnabled()).isFalse();
+    }
 }
