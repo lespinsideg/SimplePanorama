@@ -1,6 +1,6 @@
 SimplePanorama
 ===
-SimplePanorama is android panorama view library that uses [panoramagl-android](https://code.google.com/archive/p/panoramagl-android/wikis/UserGuide.wiki#Introduction) library.
+SimplePanorama is android panorama view library that uses modified version of [panoramagl-android](https://code.google.com/archive/p/panoramagl-android/wikis/UserGuide.wiki#Introduction) library. You can find modified version [here](https://github.com/lespinsideg/panoramagl).
 
 Download
 ----
@@ -19,12 +19,13 @@ allprojects {
 **Step 2.**  Add the dependency
 ```groovy
 dependencies {
-        compile 'com.github.lespinsideg:SimplePanorama:0.1.1'
+        compile 'com.github.lespinsideg:SimplePanorama:0.3.1'
 }
 ```
 
 Usage
 ----
+### Setting layout xml
 
 You can add `SphericalView` in your layout xml
 ```xml
@@ -40,6 +41,8 @@ You can add `SphericalView` in your layout xml
         app:enableZoom="false"/>
 </LinearLayout>
 ```
+
+### call lifecycle methods in activity
 
 And you should call `onResume`, `onPause`, `onDestroy` method in each lifecycle method.
 
@@ -77,25 +80,39 @@ public class MainActivity extends AppCompatActivity {
 }
 ```
 
+### Attributes list
+* enableZoom - enable zooming in/out by two fingers touch.
+* enableReset - enable resetting zoom factor by three fingers touch.
+* enableAccelerometer - enable accelerometer sensor to move panorama camera.
+* enableInertia - enable inertia of panorama camera movement.
+* yaw - set default yaw of panorama camera.
+* pitch - set default pitch of panorama camera.
+* zoomFactor - set default zoom factor of panorama camera.
+* rotationSensibility - set default rotation sensibility of panorama camera.
+
+### sample activity
+You can find a sample activity [here](https://github.com/lespinsideg/SimplePanorama/blob/master/sample/src/main/java/com/lespinside/simplepanorama/sample/MainActivity.java)
+
 Supports
 ----
 
 * supports spherical view
-* only supports power of 2 image size : 2048 x 1024 , 1024 * 512 , 512 * 256 ...
+* only supports power of 2 image sizes : 2048 x 1024 , 1024 * 512 , 512 * 256 ...
 
 License
 ----
+```
+Copyright 2016 kyuhyen hwang
 
-   Copyright 2016 lespinside
+Licensed under the Apache License, Version 2.0 (the "License");
+you may not use this file except in compliance with the License.
+You may obtain a copy of the License at
 
-   Licensed under the Apache License, Version 2.0 (the "License");
-   you may not use this file except in compliance with the License.
-   You may obtain a copy of the License at
+   http://www.apache.org/licenses/LICENSE-2.0
 
-       http://www.apache.org/licenses/LICENSE-2.0
-
-   Unless required by applicable law or agreed to in writing, software
-   distributed under the License is distributed on an "AS IS" BASIS,
-   WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-   See the License for the specific language governing permissions and
-   limitations under the License.
+Unless required by applicable law or agreed to in writing, software
+distributed under the License is distributed on an "AS IS" BASIS,
+WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+See the License for the specific language governing permissions and
+limitations under the License.
+```
